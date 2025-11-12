@@ -1,6 +1,6 @@
 # Surgeon Attention Drift Detection (Ongoing Research)
 
-### A Deep Learning Project by [Your Name]
+### A Deep Learning Project by Sanula Ranjutha
 
 This repository presents my ongoing work on a **real-time AI system** that detects **surgeon attention drifts** during surgical procedures and **learns the surgeon’s operating patterns** simultaneously.  
 The goal is to build a model that **adapts to individual surgeons**, predicting when their focus might lapse and learning from their unique surgical behavior — ultimately paving the way toward safer, smarter surgical assistance systems.
