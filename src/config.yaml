@@ -1,0 +1,69 @@
+# Global configuration for MVOR Attention project (tuned to your structure)
+project:
+  seed: 42
+  device: "cuda"  # "cuda" or "cpu"; overridden automatically if CUDA not available
+  output_dir: "outputs"
+  num_workers: 4
+  mixed_precision: false
+
+data:
+  # IMPORTANT: images live under this path; JSON file_name values are appended directly
+  images_root: "C:/Users/Sanula/Downloads/mvor_attention_workspace_updated/workspace/MVOR/camma_mvor_dataset"
+  # Annotations file path
+  annotations_file: "C:/Users/Sanula/Downloads/mvor_attention_workspace_updated/workspace/MVOR/annotations/camma_mvor_2018_labeled.json"
+  input_size: [224, 224]
+  use_multiview: true
+  use_3d: true
+  train_val_split: 0.85   # used only if day-wise split cannot be inferred
+  use_rgb_only: true      # prefer color; fall back to depth if color missing
+  gaze_classes: 5
+  # Names that could exist in the MVOR JSON for fields; code tries these in order
+  json_keys:
+    head_pose: ["head_pose", "pose", "headpose"]
+    gaze_class: ["gaze_class", "gaze", "attention_class"]
+    keypoints_2d: ["keypoints", "keypoints2d"]
+    keypoints_3d: ["keypoints3D", "keypoints_3d"]
+    bbox: ["bbox"]
+    image_id: ["image_id", "imageId", "img_id"]
+    person_id: ["id", "person_id", "track_id"]
+    annotations3D: ["annotations3D"]
+    multiview_images: ["multiview_images"]
+    cameras_info: ["cameras_info", "cameras", "camera"]
+  # Augmentation
+  augmentation:
+    horizontal_flip_prob: 0.5
+    rotation_degrees: 10
+    color_jitter: [0.1, 0.1, 0.1, 0.05]  # brightness, contrast, saturation, hue
+    random_erasing_prob: 0.0
+
+model:
+  name: "ResNet18_CBAM_MV_Fusion"
+  backbone: "resnet18"  # resnet18|resnet34|resnet50
+  pretrained: true
+  attention_reduction: 8
+  multiview_fusion: "attention"  # attention|max|mean
+  dropout: 0.1
+
+train:
+  epochs: 25
+  batch_size: 24
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-4
+  betas: [0.9, 0.999]
+  lr_warmup_steps: 0
+  grad_clip_norm: 1.0
+  val_interval: 1
+  save_best_metric: "val_total_loss"
+  warmup_steps: 25
+  attention_entropy_weight: 0.05
+  attention_uniform_weight: 0.05
+  warn_prob: 0.03
+
+loss:
+  pose_loss: "mse"    # mse
+  gaze_loss: "cross_entropy"
+
+eval:
+  batch_size: 64
+  visualize_samples: 16
+  attention_alert_threshold: 0.05

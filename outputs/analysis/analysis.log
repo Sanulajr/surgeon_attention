@@ -1,0 +1,61 @@
+[2025-10-28 02:02:22] [INFO] Using device: cpu
+[2025-10-28 02:02:24] [INFO] Loaded 4699 samples (0 missing images skipped).
+[2025-10-28 02:02:24] [INFO] val: 990 samples (day-wise split enabled).
+[2025-10-28 02:04:39] [INFO] === Classification Report ===
+[2025-10-28 02:07:20] [INFO] Using device: cpu
+[2025-10-28 02:07:21] [INFO] Loaded 4699 samples (0 missing images skipped).
+[2025-10-28 02:07:21] [INFO] val: 990 samples (day-wise split enabled).
+[2025-10-28 02:09:31] [INFO] === Classification Report ===
+[2025-10-28 02:09:31] [INFO] Unique true gaze classes: [1]
+[2025-10-28 02:09:31] [INFO] Unique predicted gaze classes: [1]
+[2025-10-28 02:09:31] [INFO]               precision    recall  f1-score   support
+
+        Left      0.000     0.000     0.000         0
+  Front-Left      1.000     1.000     1.000       990
+       Front      0.000     0.000     0.000         0
+ Front-Right      0.000     0.000     0.000         0
+       Right      0.000     0.000     0.000         0
+
+   micro avg      1.000     1.000     1.000       990
+   macro avg      0.200     0.200     0.200       990
+weighted avg      1.000     1.000     1.000       990
+
+[2025-10-28 02:09:34] [INFO] Saved analysis to: outputs/analysis
+[2025-10-28 02:20:21] [INFO] Using device: cpu
+[2025-10-28 02:20:23] [INFO] Loaded 4699 samples (0 missing images skipped).
+[2025-10-28 02:20:23] [INFO] val: 990 samples (day-wise split enabled).
+[2025-10-28 02:22:44] [INFO] === Classification Report ===
+[2025-10-28 02:22:44] [INFO] Unique true gaze classes: [2]
+[2025-10-28 02:22:44] [INFO] Unique predicted gaze classes: [1]
+[2025-10-28 02:22:44] [INFO]               precision    recall  f1-score   support
+
+        Left      0.000     0.000     0.000       0.0
+  Front-Left      0.000     0.000     0.000       0.0
+       Front      0.000     0.000     0.000     990.0
+ Front-Right      0.000     0.000     0.000       0.0
+       Right      0.000     0.000     0.000       0.0
+
+   micro avg      0.000     0.000     0.000     990.0
+   macro avg      0.000     0.000     0.000     990.0
+weighted avg      0.000     0.000     0.000     990.0
+
+[2025-10-28 02:22:45] [INFO] Saved analysis to: outputs/analysis
+[2025-10-28 11:40:17] [INFO] Using device: cpu
+[2025-10-28 11:40:18] [INFO] Loaded 4699 samples (0 missing images skipped).
+[2025-10-28 11:40:18] [INFO] val: 990 samples (day-wise split enabled).
+[2025-10-28 11:42:33] [INFO] === Classification Report ===
+[2025-10-28 11:42:33] [INFO] Unique true gaze classes: [2]
+[2025-10-28 11:42:33] [INFO] Unique predicted gaze classes: [2]
+[2025-10-28 11:42:33] [INFO]               precision    recall  f1-score   support
+
+        Left      0.000     0.000     0.000         0
+  Front-Left      0.000     0.000     0.000         0
+       Front      1.000     1.000     1.000       990
+ Front-Right      0.000     0.000     0.000         0
+       Right      0.000     0.000     0.000         0
+
+   micro avg      1.000     1.000     1.000       990
+   macro avg      0.200     0.200     0.200       990
+weighted avg      1.000     1.000     1.000       990
+
+[2025-10-28 11:42:36] [INFO] Saved analysis to: outputs/analysis
